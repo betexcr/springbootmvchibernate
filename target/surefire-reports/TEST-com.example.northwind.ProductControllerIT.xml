@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.northwind.ProductControllerIT" time="6.304" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.northwind.ProductControllerIT" time="6.461" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/target/surefire/surefirebooter-20250910140958813_3.jar /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/target/surefire 2025-09-10T14-09-58_776-jvmRun1 surefire-20250910140958813_1tmp surefire_0-20250910140958813_2tmp"/>
+    <property name="sun.java.command" value="/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/target/surefire/surefirebooter-20250910151525108_3.jar /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/target/surefire 2025-09-10T15-15-25_058-jvmRun1 surefire-20250910151525108_1tmp surefire_0-20250910151525108_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="ProductControllerIT"/>
@@ -26,6 +26,7 @@
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2025-01-21"/>
     <property name="java.home" value="/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="spring.profiles.active" value="test"/>
     <property name="file.separator" value="/"/>
     <property name="basedir" value="/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
@@ -35,7 +36,7 @@
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/target/surefire/surefirebooter-20250910140958813_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/target/surefire/surefirebooter-20250910151525108_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="23.0.2"/>
@@ -50,15 +51,15 @@
     <property name="localRepository" value="/Users/albertomunoz/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
     <property name="java.io.tmpdir" value="/var/folders/6k/cp0blcy56mx12y42q6qmpxnr0000gn/T/"/>
-    <property name="catalina.home" value="/private/var/folders/6k/cp0blcy56mx12y42q6qmpxnr0000gn/T/tomcat.0.14736670997406765758"/>
+    <property name="catalina.home" value="/private/var/folders/6k/cp0blcy56mx12y42q6qmpxnr0000gn/T/tomcat.0.8924611886072560349"/>
     <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="23.0.2"/>
     <property name="user.dir" value="/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind"/>
     <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="99080"/>
+    <property name="PID" value="14858"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
-    <property name="catalina.base" value="/private/var/folders/6k/cp0blcy56mx12y42q6qmpxnr0000gn/T/tomcat.0.14736670997406765758"/>
+    <property name="catalina.base" value="/private/var/folders/6k/cp0blcy56mx12y42q6qmpxnr0000gn/T/tomcat.0.8924611886072560349"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/albertomunoz/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -70,30 +71,30 @@
     <property name="java.class.version" value="67.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[northwind-test] "/>
   </properties>
-  <testcase name="listProducts_shouldReturnOk" classname="com.example.northwind.ProductControllerIT" time="0.483">
+  <testcase name="listProducts_shouldReturnOk" classname="com.example.northwind.ProductControllerIT" time="0.467">
     <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-14:09:59.235 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.northwind.ProductControllerIT]: ProductControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:09:59.312 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.northwind.NorthwindApplication for test class com.example.northwind.ProductControllerIT
-14:09:59.367 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
-14:09:59.368 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-14:09:59.633 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/Users/albertomunoz/.docker/run/docker.sock)
-14:09:59.634 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
-14:09:59.647 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+15:15:25.589 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.northwind.ProductControllerIT]: ProductControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:15:25.661 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.northwind.NorthwindApplication for test class com.example.northwind.ProductControllerIT
+15:15:25.717 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+15:15:25.718 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+15:15:26.007 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/Users/albertomunoz/.docker/run/docker.sock)
+15:15:26.007 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+15:15:26.027 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
   Server Version: 27.3.1
   API Version: 1.47
   Operating System: Docker Desktop
   Total Memory: 7837 MB
-14:09:59.747 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Creating container for image: testcontainers/ryuk:0.7.0
-14:09:59.919 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
-14:10:00.011 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Container testcontainers/ryuk:0.7.0 is starting: f17459659fdce4ed6030d84fe75f085b8fe437bf5181729353961ec229313082
-14:10:00.219 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Container testcontainers/ryuk:0.7.0 started in PT0.471124S
-14:10:00.223 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-14:10:00.223 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
-14:10:00.223 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
-14:10:00.224 [main] INFO tc.postgres:15 -- Creating container for image: postgres:15
-14:10:00.257 [main] INFO tc.postgres:15 -- Container postgres:15 is starting: 8337e7b5039969081dc315c85458bc5bdf6bd0d407fb488de07d6731598e3109
-14:10:01.012 [main] INFO tc.postgres:15 -- Container postgres:15 started in PT0.787801S
-14:10:01.013 [main] INFO tc.postgres:15 -- Container is started (JDBC URL: jdbc:postgresql://localhost:63116/northwind_test?loggerLevel=OFF)
+15:15:26.122 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Creating container for image: testcontainers/ryuk:0.7.0
+15:15:26.303 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+15:15:26.417 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Container testcontainers/ryuk:0.7.0 is starting: db7e0f86279a0c7fa06105f53e51c28ab0eb8a0192408cdb4ff412ccf5d2f8ee
+15:15:26.692 [main] INFO tc.testcontainers/ryuk:0.7.0 -- Container testcontainers/ryuk:0.7.0 started in PT0.570367S
+15:15:26.697 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+15:15:26.697 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+15:15:26.698 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+15:15:26.698 [main] INFO tc.postgres:15 -- Creating container for image: postgres:15
+15:15:26.741 [main] INFO tc.postgres:15 -- Container postgres:15 is starting: 0d2f462c60c1664cd68a5402f93cdc6796e02feff3dbb91c8a3d04ac3b7b0107
+15:15:27.593 [main] INFO tc.postgres:15 -- Container postgres:15 started in PT0.894786S
+15:15:27.594 [main] INFO tc.postgres:15 -- Container is started (JDBC URL: jdbc:postgresql://localhost:65361/northwind_test?loggerLevel=OFF)
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -104,61 +105,61 @@
 
  :: Spring Boot ::                (v3.3.2)
 
-2025-09-10T14:10:01.293-06:00  INFO 99080 --- [northwind-test] [           main] c.example.northwind.ProductControllerIT  : Starting ProductControllerIT using Java 23.0.2 with PID 99080 (started by albertomunoz in /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind)
-2025-09-10T14:10:01.294-06:00  INFO 99080 --- [northwind-test] [           main] c.example.northwind.ProductControllerIT  : The following 1 profile is active: "test"
-2025-09-10T14:10:01.773-06:00  INFO 99080 --- [northwind-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-10T14:10:01.803-06:00  INFO 99080 --- [northwind-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 8 JPA repository interfaces.
-2025-09-10T14:10:02.223-06:00  INFO 99080 --- [northwind-test] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2025-09-10T14:10:02.230-06:00  INFO 99080 --- [northwind-test] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-10T14:10:02.230-06:00  INFO 99080 --- [northwind-test] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2025-09-10T14:10:02.255-06:00  INFO 99080 --- [northwind-test] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-10T14:10:02.256-06:00  INFO 99080 --- [northwind-test] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 952 ms
+2025-09-10T15:15:27.860-06:00  INFO 14858 --- [northwind-test] [           main] c.example.northwind.ProductControllerIT  : Starting ProductControllerIT using Java 23.0.2 with PID 14858 (started by albertomunoz in /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind)
+2025-09-10T15:15:27.861-06:00  INFO 14858 --- [northwind-test] [           main] c.example.northwind.ProductControllerIT  : The following 1 profile is active: "test"
+2025-09-10T15:15:28.320-06:00  INFO 14858 --- [northwind-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-10T15:15:28.353-06:00  INFO 14858 --- [northwind-test] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 8 JPA repository interfaces.
+2025-09-10T15:15:28.780-06:00  INFO 14858 --- [northwind-test] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-09-10T15:15:28.791-06:00  INFO 14858 --- [northwind-test] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-10T15:15:28.791-06:00  INFO 14858 --- [northwind-test] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-09-10T15:15:28.819-06:00  INFO 14858 --- [northwind-test] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-10T15:15:28.820-06:00  INFO 14858 --- [northwind-test] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 950 ms
 Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-2025-09-10T14:10:02.467-06:00  INFO 99080 --- [northwind-test] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-10T14:10:02.492-06:00  INFO 99080 --- [northwind-test] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2025-09-10T14:10:02.507-06:00  INFO 99080 --- [northwind-test] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-10T14:10:02.641-06:00  INFO 99080 --- [northwind-test] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-10T14:10:02.659-06:00  INFO 99080 --- [northwind-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-10T14:10:02.762-06:00  INFO 99080 --- [northwind-test] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@760ac834
-2025-09-10T14:10:02.762-06:00  INFO 99080 --- [northwind-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-10T14:10:03.295-06:00  INFO 99080 --- [northwind-test] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-10T14:10:03.303-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.303-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order_details" does not exist, skipping
-2025-09-10T14:10:03.304-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.304-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order_details" does not exist, skipping
-2025-09-10T14:10:03.304-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.304-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "orders" does not exist, skipping
-2025-09-10T14:10:03.305-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.305-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "orders" does not exist, skipping
-2025-09-10T14:10:03.306-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.306-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "products" does not exist, skipping
-2025-09-10T14:10:03.306-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.307-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "products" does not exist, skipping
-2025-09-10T14:10:03.307-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.307-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "categories" does not exist, skipping
-2025-09-10T14:10:03.308-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.308-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "customers" does not exist, skipping
-2025-09-10T14:10:03.309-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.309-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "employees" does not exist, skipping
-2025-09-10T14:10:03.309-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.309-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order_details" does not exist, skipping
-2025-09-10T14:10:03.310-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.310-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
-2025-09-10T14:10:03.310-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.310-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "products" does not exist, skipping
-2025-09-10T14:10:03.311-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.311-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "suppliers" does not exist, skipping
-2025-09-10T14:10:03.311-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2025-09-10T14:10:03.312-06:00  WARN 99080 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
-2025-09-10T14:10:03.342-06:00  INFO 99080 --- [northwind-test] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-10T14:10:03.606-06:00  INFO 99080 --- [northwind-test] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-09-10T14:10:04.395-06:00  INFO 99080 --- [northwind-test] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2025-09-10T14:10:04.720-06:00  INFO 99080 --- [northwind-test] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 63127 (http) with context path '/'
-2025-09-10T14:10:04.740-06:00  INFO 99080 --- [northwind-test] [           main] c.example.northwind.ProductControllerIT  : Started ProductControllerIT in 3.585 seconds (process running for 5.878)
-2025-09-10T14:10:05.146-06:00  INFO 99080 --- [northwind-test] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-10T14:10:05.146-06:00  INFO 99080 --- [northwind-test] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-10T14:10:05.147-06:00  INFO 99080 --- [northwind-test] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-09-10T14:10:05.260-06:00  WARN 99080 --- [northwind-test] [o-auto-1-exec-1] PageModule$PlainPageSerializationWarning : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+2025-09-10T15:15:29.037-06:00  INFO 14858 --- [northwind-test] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-10T15:15:29.062-06:00  INFO 14858 --- [northwind-test] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-09-10T15:15:29.076-06:00  INFO 14858 --- [northwind-test] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-10T15:15:29.200-06:00  INFO 14858 --- [northwind-test] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-10T15:15:29.217-06:00  INFO 14858 --- [northwind-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-10T15:15:29.320-06:00  INFO 14858 --- [northwind-test] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@167ccc3c
+2025-09-10T15:15:29.321-06:00  INFO 14858 --- [northwind-test] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-10T15:15:29.830-06:00  INFO 14858 --- [northwind-test] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-10T15:15:29.841-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.841-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order_details" does not exist, skipping
+2025-09-10T15:15:29.842-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.842-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "order_details" does not exist, skipping
+2025-09-10T15:15:29.843-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.843-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "orders" does not exist, skipping
+2025-09-10T15:15:29.844-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.844-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "orders" does not exist, skipping
+2025-09-10T15:15:29.845-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.845-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "products" does not exist, skipping
+2025-09-10T15:15:29.845-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.845-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "products" does not exist, skipping
+2025-09-10T15:15:29.846-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.846-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "categories" does not exist, skipping
+2025-09-10T15:15:29.847-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.847-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "customers" does not exist, skipping
+2025-09-10T15:15:29.848-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.848-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "employees" does not exist, skipping
+2025-09-10T15:15:29.849-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.849-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order_details" does not exist, skipping
+2025-09-10T15:15:29.849-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.849-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2025-09-10T15:15:29.850-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.850-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "products" does not exist, skipping
+2025-09-10T15:15:29.851-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.851-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "suppliers" does not exist, skipping
+2025-09-10T15:15:29.851-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-09-10T15:15:29.851-06:00  WARN 14858 --- [northwind-test] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2025-09-10T15:15:29.882-06:00  INFO 14858 --- [northwind-test] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-10T15:15:30.182-06:00  INFO 14858 --- [northwind-test] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-10T15:15:30.893-06:00  INFO 14858 --- [northwind-test] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2025-09-10T15:15:31.187-06:00  INFO 14858 --- [northwind-test] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 65372 (http) with context path '/'
+2025-09-10T15:15:31.197-06:00  INFO 14858 --- [northwind-test] [           main] c.example.northwind.ProductControllerIT  : Started ProductControllerIT in 3.464 seconds (process running for 6.038)
+2025-09-10T15:15:31.583-06:00  INFO 14858 --- [northwind-test] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-10T15:15:31.584-06:00  INFO 14858 --- [northwind-test] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-10T15:15:31.585-06:00  INFO 14858 --- [northwind-test] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-09-10T15:15:31.699-06:00  WARN 14858 --- [northwind-test] [o-auto-1-exec-1] PageModule$PlainPageSerializationWarning : Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
 	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
 	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
 

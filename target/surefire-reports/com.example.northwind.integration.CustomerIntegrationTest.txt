@@ -1,21 +1,200 @@
 -------------------------------------------------------------------------------
 Test set: com.example.northwind.integration.CustomerIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! -- in com.example.northwind.integration.CustomerIntegrationTest
-com.example.northwind.integration.CustomerIntegrationTest -- Time elapsed: 0.009 s <<< ERROR!
-java.lang.IllegalStateException: Previous attempts to find a Docker environment failed. Will not retry. Please see logs and check configuration
-	at org.testcontainers.dockerclient.DockerClientProviderStrategy.getFirstValidStrategy(DockerClientProviderStrategy.java:232)
-	at org.testcontainers.DockerClientFactory.getOrInitializeStrategy(DockerClientFactory.java:152)
-	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:194)
-	at org.testcontainers.DockerClientFactory$1.getDockerClient(DockerClientFactory.java:106)
-	at com.github.dockerjava.api.DockerClientDelegate.authConfig(DockerClientDelegate.java:109)
-	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:329)
-	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.start(TestcontainersExtension.java:280)
-	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.access$200(TestcontainersExtension.java:267)
-	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$null$4(TestcontainersExtension.java:82)
-	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$5(TestcontainersExtension.java:82)
+Tests run: 14, Failures: 14, Errors: 0, Skipped: 0, Time elapsed: 426.5 s <<< FAILURE! -- in com.example.northwind.integration.CustomerIntegrationTest
+com.example.northwind.integration.CustomerIntegrationTest.testGetAllCustomers_AsAdmin_ShouldReturnCustomers -- Time elapsed: 30.06 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testcontainers.junit.jupiter.TestcontainersExtension.startContainers(TestcontainersExtension.java:82)
-	at org.testcontainers.junit.jupiter.TestcontainersExtension.beforeAll(TestcontainersExtension.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testSearchCustomers_ShouldReturnFilteredResults -- Time elapsed: 30.06 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testCreateCustomerWithInvalidData_ShouldReturn400 -- Time elapsed: 30.11 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testGetCustomersWithSorting_ShouldReturnSortedResults -- Time elapsed: 30.03 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testCreateCustomer_AsStaff_ShouldSucceed -- Time elapsed: 30.08 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testCreateCustomer_WithoutAuth_ShouldReturn401 -- Time elapsed: 30.05 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testGetCustomersWithPagination_ShouldReturnPaginatedResults -- Time elapsed: 30.02 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testGetAllCustomers_WithoutAuth_ShouldReturn401 -- Time elapsed: 30.04 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testGetAllCustomers_AsStaff_ShouldReturnCustomers -- Time elapsed: 30.02 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testDeleteCustomer_AsAdmin_ShouldSucceed -- Time elapsed: 30.03 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testGetCustomerById_AsStaff_ShouldReturnCustomer -- Time elapsed: 30.03 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testCreateCustomer_AsAdmin_ShouldSucceed -- Time elapsed: 30.03 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testGetCustomerById_NonExistent_ShouldReturn404 -- Time elapsed: 30.03 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.example.northwind.integration.CustomerIntegrationTest.testUpdateCustomer_AsAdmin_ShouldSucceed -- Time elapsed: 30.03 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <403>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at com.example.northwind.integration.BaseIntegrationTest.loginAndGetToken(BaseIntegrationTest.java:69)
+	at com.example.northwind.integration.CustomerIntegrationTest.setUp(CustomerIntegrationTest.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 
