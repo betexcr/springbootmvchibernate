@@ -3,6 +3,7 @@ package com.example.northwind.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -30,5 +31,6 @@ public class Supplier {
 	private String country;
 
 	@OneToMany(mappedBy = "supplier")
+	@JsonIgnore
 	private Set<Product> products = new LinkedHashSet<>();
 }

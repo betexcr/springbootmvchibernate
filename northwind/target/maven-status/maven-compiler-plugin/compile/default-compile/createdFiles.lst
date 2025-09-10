@@ -39,6 +39,7 @@ com/example/northwind/repository/spec/ProductSpecifications.class
 com/example/northwind/security/JwtService.class
 com/example/northwind/controller/OrderDetailController.class
 com/example/northwind/config/GlobalExceptionHandler.class
+com/example/northwind/config/OpenApiConfig.class
 com/example/northwind/controller/CustomerController.class
 com/example/northwind/entity/Employee.class
 com/example/northwind/repository/SupplierRepository.class

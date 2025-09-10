@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: northwind-test
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/northwind_test}
+    username: ${DATABASE_USERNAME:test}
+    password: ${DATABASE_PASSWORD:test}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  flyway:
+    enabled: false
+
+server:
+  port: 0
+
+logging:
+  level:
+    org.hibernate.SQL: warn
+    org.springframework.security: warn
+    org.testcontainers: warn
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized

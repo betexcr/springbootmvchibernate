@@ -2,6 +2,19 @@
 
 A comprehensive Spring Boot REST API for the Northwind database, implementing modern security practices, performance optimizations, and enterprise-grade features.
 
+## 🌐 Live Deployment
+
+**🚀 Production API**: https://northwind-api-815129345561.us-central1.run.app  
+**📚 Swagger Documentation**: https://northwind-api-815129345561.us-central1.run.app/swagger-ui/index.html
+
+### Quick Test
+```bash
+# Test public endpoints (no authentication required)
+curl "https://northwind-api-815129345561.us-central1.run.app/api/categories"
+curl "https://northwind-api-815129345561.us-central1.run.app/api/products?size=5"
+curl "https://northwind-api-815129345561.us-central1.run.app/api/suppliers"
+```
+
 ## 🚀 Features
 
 ### Core Functionality
@@ -47,6 +60,14 @@ A comprehensive Spring Boot REST API for the Northwind database, implementing mo
 - **Docker Support** with docker-compose for local development
 - **Maven Build System** with proper dependency management
 - **Testcontainers** for integration testing with real databases
+
+### Cloud Infrastructure & Deployment
+- **Google Cloud Run** - Serverless container platform for auto-scaling
+- **Google Cloud SQL** - Managed PostgreSQL database with automatic backups
+- **Google Cloud Build** - CI/CD pipeline for automated deployments
+- **Docker Containerization** - Consistent deployment across environments
+- **Environment-based Configuration** - Secure database credentials via environment variables
+- **Cloud SQL Connector** - Secure database connections without exposing credentials
 
 ## 🏗️ Architecture
 
@@ -125,6 +146,12 @@ mvn spring-boot:run
 
 ### Getting JWT Token
 ```bash
+# Production API
+curl -X POST https://northwind-api-815129345561.us-central1.run.app/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"admin123"}'
+
+# Local development
 curl -X POST http://localhost:8080/api/auth/login \
   -H "Content-Type: application/json" \
   -d '{"username":"admin","password":"admin123"}'
@@ -132,6 +159,11 @@ curl -X POST http://localhost:8080/api/auth/login \
 
 ### Using JWT Token
 ```bash
+# Production API
+curl -H "Authorization: Bearer <your-jwt-token>" \
+  https://northwind-api-815129345561.us-central1.run.app/api/products
+
+# Local development
 curl -H "Authorization: Bearer <your-jwt-token>" \
   http://localhost:8080/api/products
 ```

@@ -2,6 +2,7 @@
 /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/main/java/com/example/northwind/config/CorsConfig.java
 /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/main/java/com/example/northwind/config/FlywayConfig.java
 /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/main/java/com/example/northwind/config/GlobalExceptionHandler.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/main/java/com/example/northwind/config/OpenApiConfig.java
 /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/main/java/com/example/northwind/config/SecurityConfig.java
 /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/main/java/com/example/northwind/config/WebConfig.java
 /Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/main/java/com/example/northwind/controller/AuthController.java

@@ -3,6 +3,7 @@ package com.example.northwind.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Getter
 @Setter
@@ -19,10 +20,12 @@ public class Product {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "supplier_id")
+	@JsonIgnore
 	private Supplier supplier;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "category_id")
+	@JsonIgnore
 	private Category category;
 
 	@Column(name = "quantity_per_unit", length = 20)
