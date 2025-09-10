@@ -1,0 +1,43 @@
+{
+  "info": {
+    "name": "Northwind API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "url": { "raw": "http://localhost:8080/api/auth/login", "protocol": "http", "host": ["localhost"], "port": "8080", "path":["api","auth","login"] },
+        "body": { "mode": "raw", "raw": "{\"username\":\"admin\",\"password\":\"x\"}" }
+      }
+    },
+    {
+      "name": "Auth - Refresh",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+        "url": { "raw": "http://localhost:8080/api/auth/refresh", "protocol": "http", "host": ["localhost"], "port": "8080", "path":["api","auth","refresh"] }
+      }
+    },
+    {
+      "name": "Products - List",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:8080/api/products?page=0&size=10", "protocol": "http", "host": ["localhost"], "port": "8080", "path":["api","products"], "query":[{"key":"page","value":"0"},{"key":"size","value":"10"}] }
+      }
+    },
+    {
+      "name": "Orders - Summary",
+      "request": {
+        "method": "GET",
+        "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
+        "url": { "raw": "http://localhost:8080/api/orders/10248/summary", "protocol": "http", "host": ["localhost"], "port": "8080", "path":["api","orders","10248","summary"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "token", "value": "" }
+  ]
+}

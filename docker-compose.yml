@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: northwind-postgres
+    environment:
+      POSTGRES_DB: northwind
+      POSTGRES_USER: northwind
+      POSTGRES_PASSWORD: northwind
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U northwind -d northwind"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+volumes:
+  pgdata:

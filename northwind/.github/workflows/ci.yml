@@ -1,0 +1,29 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        ports: ['5432:5432']
+        env:
+          POSTGRES_DB: northwind
+          POSTGRES_USER: northwind
+          POSTGRES_PASSWORD: northwind
+        options: >-
+          --health-cmd="pg_isready -U northwind -d northwind" --health-interval=5s --health-timeout=5s --health-retries=20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: 'maven'
+      - name: Build with Maven
+        run: mvn -B -ntp -DskipTests clean package
+      - name: Run tests
+        run: mvn -B -ntp test

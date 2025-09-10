@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: northwind-api
+    env: java
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/northwind-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRATION
+        value: 86400000
+      - key: SPRING_PROFILES_ACTIVE
+        value: production

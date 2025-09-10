@@ -1,0 +1,13 @@
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/CategorySupplierControllerTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/CustomerEmployeeOrderDetailControllerTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/OrderControllerTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/ProductControllerIT.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/ProductControllerTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/integration/BaseIntegrationTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/integration/CategoryIntegrationTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/integration/CustomerIntegrationTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/integration/EmployeeIntegrationTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/integration/OrderDetailIntegrationTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/integration/OrderIntegrationTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/integration/ProductIntegrationTest.java
+/Users/albertomunoz/Documents/Code/springbootmvchibernate/northwind/src/test/java/com/example/northwind/integration/SupplierIntegrationTest.java

@@ -1,0 +1,13 @@
+com/example/northwind/CategorySupplierControllerTest.class
+com/example/northwind/integration/CategoryIntegrationTest.class
+com/example/northwind/ProductControllerIT.class
+com/example/northwind/integration/ProductIntegrationTest.class
+com/example/northwind/integration/EmployeeIntegrationTest.class
+com/example/northwind/CustomerEmployeeOrderDetailControllerTest.class
+com/example/northwind/OrderControllerTest.class
+com/example/northwind/integration/OrderDetailIntegrationTest.class
+com/example/northwind/ProductControllerTest.class
+com/example/northwind/integration/SupplierIntegrationTest.class
+com/example/northwind/integration/BaseIntegrationTest.class
+com/example/northwind/integration/CustomerIntegrationTest.class
+com/example/northwind/integration/OrderIntegrationTest.class
