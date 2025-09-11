@@ -35,7 +35,7 @@ jobs:
       run: mvn compile -q
 
     - name: Run unit tests
-      run: mvn test -Dtest="!*IntegrationTest" -q
+      run: mvn test -Dtest='!*IntegrationTest' -Dsurefire.failIfNoSpecifiedTests=false -q
       env:
         SPRING_PROFILES_ACTIVE: test
         JWT_SECRET: test-secret-key-for-ci
@@ -44,7 +44,7 @@ jobs:
       uses: docker/setup-buildx-action@v3
 
     - name: Run integration tests
-      run: timeout 10m mvn test -Dtest="*IntegrationTest" -q
+      run: timeout 10m mvn test -Dtest='*IntegrationTest' -q
       env:
         SPRING_PROFILES_ACTIVE: test
         JWT_SECRET: test-secret-key-for-ci
