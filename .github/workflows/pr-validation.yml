@@ -27,19 +27,13 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
 
     - name: Validate Maven configuration
-      run: |
-        cd northwind
-        mvn validate
+      run: mvn validate
 
     - name: Compile source code
-      run: |
-        cd northwind
-        mvn compile -q
+      run: mvn compile -q
 
     - name: Run unit tests only
-      run: |
-        cd northwind
-        mvn test -Dtest="!*IntegrationTest" -q
+      run: mvn test -Dtest="!*IntegrationTest" -q
       env:
         SPRING_PROFILES_ACTIVE: ${{ secrets.SPRING_PROFILES_ACTIVE }}
         DATABASE_URL: ${{ secrets.DATABASE_URL }}
@@ -48,6 +42,4 @@ jobs:
         JWT_SECRET: ${{ secrets.JWT_SECRET }}
 
     - name: Build application
-      run: |
-        cd northwind
-        mvn package -DskipTests -q
+      run: mvn package -DskipTests -q
