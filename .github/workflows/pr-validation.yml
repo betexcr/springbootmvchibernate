@@ -35,11 +35,8 @@ jobs:
     - name: Run unit tests only
       run: mvn test -Dtest="!*IntegrationTest" -q
       env:
-        SPRING_PROFILES_ACTIVE: ${{ secrets.SPRING_PROFILES_ACTIVE }}
-        DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
-        DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        SPRING_PROFILES_ACTIVE: test
+        JWT_SECRET: test-secret-key-for-ci
 
     - name: Build application
       run: mvn package -DskipTests -q
