@@ -18,8 +18,8 @@ public class ProductIntegrationTest extends BaseIntegrationTest {
 
     @BeforeEach
     void setUp() {
-        adminToken = loginAndGetToken("admin", "admin123");
-        staffToken = loginAndGetToken("staff", "staff123");
+        adminToken = loginAndGetToken("admin", "x");
+        staffToken = loginAndGetToken("staff", "x");
         objectMapper = new ObjectMapper();
     }
 

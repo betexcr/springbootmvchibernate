@@ -320,7 +320,7 @@ deploy() {
     # Check if environment variables are set
     if [[ -z "$DATABASE_URL" ]]; then
         print_error "DATABASE_URL environment variable is not set"
-        print_status "Please set it with: export DATABASE_URL='your-supabase-database-url'"
+        print_status "Please set it with: export DATABASE_URL='your-database-url'"
         exit 1
     fi
     

@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "products")
 public class Product {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "product_id")
 	private Integer id;
 
@@ -28,11 +27,14 @@ public class Product {
 	@JsonIgnore
 	private Category category;
 
+	@Column(name = "category_id", insertable = false, updatable = false)
+	private Integer categoryId;
+
 	@Column(name = "quantity_per_unit", length = 20)
 	private String quantityPerUnit;
 
 	@Column(name = "unit_price")
-	private java.math.BigDecimal unitPrice;
+	private Float unitPrice;
 
 	@Column(name = "units_in_stock")
 	private Short unitsInStock;
@@ -45,4 +47,19 @@ public class Product {
 
 	@Column(name = "discontinued", nullable = false)
 	private Boolean discontinued;
+
+	@Column(name = "description", columnDefinition = "TEXT")
+	private String description;
+
+	@Column(name = "variants", columnDefinition = "TEXT")
+	private String variants; // JSON string for color options, sizes, etc.
+
+	@Column(name = "care_instructions", columnDefinition = "TEXT")
+	private String careInstructions;
+
+	@Column(name = "detailed_description", columnDefinition = "TEXT")
+	private String detailedDescription;
+
+	@Column(name = "image_url", length = 500)
+	private String imageUrl;
 }

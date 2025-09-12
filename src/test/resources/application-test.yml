@@ -1,14 +1,10 @@
 spring:
   application:
     name: northwind-test
-  datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/northwind_test}
-    username: ${DATABASE_USERNAME:test}
-    password: ${DATABASE_PASSWORD:test}
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
     properties:
       hibernate:
         format_sql: false
@@ -16,7 +12,7 @@ spring:
           lob:
             non_contextual_creation: true
   flyway:
-    enabled: false
+    enabled: true
 
 server:
   port: 0

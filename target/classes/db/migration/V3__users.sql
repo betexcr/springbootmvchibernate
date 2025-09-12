@@ -5,14 +5,14 @@ create table if not exists users (
   roles varchar(100) not null,
   enabled boolean not null default true
 );
+
 -- seed demo users (passwords are bcrypt for 'x')
--- bcrypt for 'x' -> $2a$10$7aO.0f5h9fA3s5Yy7uacfO8gkZbY7w7yq0m8mKk5cZlX3j9b1Xq2u
+-- bcrypt for 'x' -> $2a$10$ZxWPcShfLFUHd5mPZB7i5u5xGUh1KV5MrWHSdtUtYBO3q5q.Bn496
 insert into users (username, password, roles, enabled) values
-  ('admin', '$2a$10$7aO.0f5h9fA3s5Yy7uacfO8gkZbY7w7yq0m8mKk5cZlX3j9b1Xq2u', 'ADMIN', true)
-  on conflict (username) do nothing;
+  ('admin', '$2a$10$ZxWPcShfLFUHd5mPZB7i5u5xGUh1KV5MrWHSdtUtYBO3q5q.Bn496', 'ADMIN', true);
+
 insert into users (username, password, roles, enabled) values
-  ('staff', '$2a$10$7aO.0f5h9fA3s5Yy7uacfO8gkZbY7w7yq0m8mKk5cZlX3j9b1Xq2u', 'STAFF', true)
-  on conflict (username) do nothing;
+  ('staff', '$2a$10$ZxWPcShfLFUHd5mPZB7i5u5xGUh1KV5MrWHSdtUtYBO3q5q.Bn496', 'STAFF', true);
+
 insert into users (username, password, roles, enabled) values
-  ('demo', '$2a$10$7aO.0f5h9fA3s5Yy7uacfO8gkZbY7w7yq0m8mKk5cZlX3j9b1Xq2u', 'USER', true)
-  on conflict (username) do nothing;
+  ('demo', '$2a$10$ZxWPcShfLFUHd5mPZB7i5u5xGUh1KV5MrWHSdtUtYBO3q5q.Bn496', 'USER', true);

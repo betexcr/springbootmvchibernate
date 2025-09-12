@@ -1,6 +1,7 @@
 package com.example.northwind.controller;
 
 import com.example.northwind.entity.Product;
+import com.example.northwind.entity.ProductReview;
 import com.example.northwind.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -10,6 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/api/products")
@@ -31,5 +36,15 @@ public class ProductController {
 	@GetMapping("/{id}")
 	public Product get(@PathVariable Integer id) {
 		return productService.get(id);
+	}
+
+	@GetMapping("/{id}/reviews")
+	public List<ProductReview> getReviews(@PathVariable Integer id) {
+		return productService.getReviews(id);
+	}
+
+	@GetMapping("/{id}/reviews/stats")
+	public Map<String, Object> getReviewStats(@PathVariable Integer id) {
+		return productService.getReviewStats(id);
 	}
 }

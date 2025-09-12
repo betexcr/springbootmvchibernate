@@ -1,0 +1,15 @@
+{
+  "name": "northwind",
+  "version": "1.0.0",
+  "description": "A comprehensive Spring Boot REST API for the Northwind database, implementing modern security practices, performance optimizations, and enterprise-grade features.",
+  "main": "test-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

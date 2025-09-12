@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart Test</title>
+</head>
+<body>
+    <h1>Cart Functionality Test</h1>
+    <button onclick="testCart()">Test Cart</button>
+    <div id="result"></div>
+
+    <script>
+        async function testCart() {
+            try {
+                // Create a cart
+                const createResponse = await fetch('http://localhost:8080/api/cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const cart = await createResponse.json();
+                console.log('Created cart:', cart);
+                
+                // Add an item
+                const addResponse = await fetch(`http://localhost:8080/api/cart/${cart.id}/items`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        productId: "61",
+                        productName: "Chai",
+                        price: 18.0,
+                        quantity: 2,
+                        imageUrl: "https://picsum.photos/seed/chai/400/400"
+                    })
+                });
+                const updatedCart = await addResponse.json();
+                console.log('Updated cart:', updatedCart);
+                
+                document.getElementById('result').innerHTML = `
+                    <h2>Cart ID: ${cart.id}</h2>
+                    <p>Total Quantity: ${updatedCart.totalQuantity}</p>
+                    <p>Total Price: $${updatedCart.totalPrice}</p>
+                    <p>Items: ${updatedCart.items.length}</p>
+                `;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

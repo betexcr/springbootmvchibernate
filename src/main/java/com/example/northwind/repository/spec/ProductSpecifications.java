@@ -10,7 +10,7 @@ public class ProductSpecifications {
 		return (root, cq, cb) -> q == null ? cb.conjunction() : cb.like(cb.lower(root.get("name")), "%" + q.toLowerCase() + "%");
 	}
 	public static Specification<Product> categoryId(Integer id) {
-		return (root, cq, cb) -> id == null ? cb.conjunction() : cb.equal(root.get("category").get("id"), id);
+		return (root, cq, cb) -> id == null ? cb.conjunction() : cb.equal(root.get("categoryId"), id);
 	}
 	public static Specification<Product> supplierId(Integer id) {
 		return (root, cq, cb) -> id == null ? cb.conjunction() : cb.equal(root.get("supplier").get("id"), id);
@@ -23,5 +23,15 @@ public class ProductSpecifications {
 	}
 	public static Specification<Product> discontinued(Boolean d) {
 		return (root, cq, cb) -> d == null ? cb.conjunction() : cb.equal(root.get("discontinued"), d);
+	}
+	
+	public static Specification<Product> buildSpecification(String q, Integer categoryId, Integer supplierId,
+														   BigDecimal minPrice, BigDecimal maxPrice, Boolean discontinued) {
+		return Specification.where(nameContains(q))
+				.and(categoryId(categoryId))
+				.and(supplierId(supplierId))
+				.and(priceGte(minPrice))
+				.and(priceLte(maxPrice))
+				.and(discontinued(discontinued));
 	}
 }

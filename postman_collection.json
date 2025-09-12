@@ -1,43 +1,194 @@
 {
   "info": {
+    "_postman_id": "9f3a6c3e-2c7f-4f0e-9c0d-1a6a0c3b9b7e",
     "name": "Northwind API",
+    "description": "Collection for Northwind Spring Boot API endpoints",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Auth - Login",
-      "request": {
-        "method": "POST",
-        "header": [ { "key": "Content-Type", "value": "application/json" } ],
-        "url": { "raw": "http://localhost:8080/api/auth/login", "protocol": "http", "host": ["localhost"], "port": "8080", "path":["api","auth","login"] },
-        "body": { "mode": "raw", "raw": "{\"username\":\"admin\",\"password\":\"x\"}" }
-      }
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" } ],
+            "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path":["api","auth","login"] },
+            "body": { "mode": "raw", "raw": "{\"username\":\"admin\",\"password\":\"x\"}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ],
+            "url": { "raw": "{{baseUrl}}/api/auth/refresh", "host": ["{{baseUrl}}"], "path":["api","auth","refresh"] }
+          },
+          "response": []
+        }
+      ]
     },
     {
-      "name": "Auth - Refresh",
-      "request": {
-        "method": "POST",
-        "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
-        "url": { "raw": "http://localhost:8080/api/auth/refresh", "protocol": "http", "host": ["localhost"], "port": "8080", "path":["api","auth","refresh"] }
-      }
+      "name": "Products",
+      "item": [
+        {
+          "name": "List Products",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/products?q=&categoryId=&supplierId=&minPrice=&maxPrice=&discontinued=&page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api","products"],
+              "query": [
+                {"key":"q","value":""},
+                {"key":"categoryId","value":""},
+                {"key":"supplierId","value":""},
+                {"key":"minPrice","value":""},
+                {"key":"maxPrice","value":""},
+                {"key":"discontinued","value":""},
+                {"key":"page","value":"0"},
+                {"key":"size","value":"10"}
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/products/1", "host": ["{{baseUrl}}"], "path": ["api","products","1"] }
+          },
+          "response": []
+        }
+      ]
     },
     {
-      "name": "Products - List",
-      "request": {
-        "method": "GET",
-        "url": { "raw": "http://localhost:8080/api/products?page=0&size=10", "protocol": "http", "host": ["localhost"], "port": "8080", "path":["api","products"], "query":[{"key":"page","value":"0"},{"key":"size","value":"10"}] }
-      }
+      "name": "Categories",
+      "item": [
+        {
+          "name": "List Categories",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/categories?page=0&size=10", "host": ["{{baseUrl}}"], "path": ["api","categories"], "query": [{"key":"page","value":"0"},{"key":"size","value":"10"}] }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Category by ID",
+          "request": {
+            "method": "GET",
+            "url": { "raw": "{{baseUrl}}/api/categories/1", "host": ["{{baseUrl}}"], "path": ["api","categories","1"] }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ],
+            "url": { "raw": "{{baseUrl}}/api/categories", "host": ["{{baseUrl}}"], "path": ["api","categories"] },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Beverages\",\n  \"description\": \"Soft drinks, coffees, teas, beers\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ],
+            "url": { "raw": "{{baseUrl}}/api/categories/1", "host": ["{{baseUrl}}"], "path": ["api","categories","1"] },
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Beverages\",\n  \"description\": \"Updated description\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "header": [ { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ],
+            "url": { "raw": "{{baseUrl}}/api/categories/1", "host": ["{{baseUrl}}"], "path": ["api","categories","1"] }
+          },
+          "response": []
+        }
+      ]
     },
     {
-      "name": "Orders - Summary",
-      "request": {
-        "method": "GET",
-        "header": [ { "key": "Authorization", "value": "Bearer {{token}}" } ],
-        "url": { "raw": "http://localhost:8080/api/orders/10248/summary", "protocol": "http", "host": ["localhost"], "port": "8080", "path":["api","orders","10248","summary"] }
-      }
+      "name": "Customers",
+      "item": [
+        { "name": "List Customers", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/customers?page=0&size=10", "host": ["{{baseUrl}}"], "path": ["api","customers"], "query": [{"key":"page","value":"0"},{"key":"size","value":"10"}] } }, "response": [] },
+        { "name": "Get Customer by ID", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/customers/ALFKI", "host": ["{{baseUrl}}"], "path": ["api","customers","ALFKI"] } }, "response": [] },
+        { "name": "Create Customer", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/customers", "host": ["{{baseUrl}}"], "path": ["api","customers"] }, "body": { "mode": "raw", "raw": "{\n  \"id\": \"NEWID\",\n  \"companyName\": \"New Co\",\n  \"contactName\": \"John Doe\"\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Update Customer", "request": { "method": "PUT", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/customers/ALFKI", "host": ["{{baseUrl}}"], "path": ["api","customers","ALFKI"] }, "body": { "mode": "raw", "raw": "{\n  \"companyName\": \"New Co Updated\",\n  \"contactName\": \"Jane Doe\"\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Delete Customer", "request": { "method": "DELETE", "header": [ { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/customers/ALFKI", "host": ["{{baseUrl}}"], "path": ["api","customers","ALFKI"] } }, "response": [] }
+      ]
+    },
+    {
+      "name": "Employees",
+      "item": [
+        { "name": "List Employees", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/employees?page=0&size=10", "host": ["{{baseUrl}}"], "path": ["api","employees"], "query": [{"key":"page","value":"0"},{"key":"size","value":"10"}] } }, "response": [] },
+        { "name": "Get Employee by ID", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/employees/1", "host": ["{{baseUrl}}"], "path": ["api","employees","1"] } }, "response": [] },
+        { "name": "Create Employee", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/employees", "host": ["{{baseUrl}}"], "path": ["api","employees"] }, "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Andrew\",\n  \"lastName\": \"Fuller\"\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Update Employee", "request": { "method": "PUT", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/employees/1", "host": ["{{baseUrl}}"], "path": ["api","employees","1"] }, "body": { "mode": "raw", "raw": "{\n  \"firstName\": \"Andrew\",\n  \"lastName\": \"Updated\"\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Delete Employee", "request": { "method": "DELETE", "header": [ { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/employees/1", "host": ["{{baseUrl}}"], "path": ["api","employees","1"] } }, "response": [] }
+      ]
+    },
+    {
+      "name": "Suppliers",
+      "item": [
+        { "name": "List Suppliers", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/suppliers?page=0&size=10", "host": ["{{baseUrl}}"], "path": ["api","suppliers"], "query": [{"key":"page","value":"0"},{"key":"size","value":"10"}] } }, "response": [] },
+        { "name": "Get Supplier by ID", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/suppliers/1", "host": ["{{baseUrl}}"], "path": ["api","suppliers","1"] } }, "response": [] },
+        { "name": "Create Supplier", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/suppliers", "host": ["{{baseUrl}}"], "path": ["api","suppliers"] }, "body": { "mode": "raw", "raw": "{\n  \"companyName\": \"Exotic Liquids\",\n  \"contactName\": \"Charlotte\"\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Update Supplier", "request": { "method": "PUT", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/suppliers/1", "host": ["{{baseUrl}}"], "path": ["api","suppliers","1"] }, "body": { "mode": "raw", "raw": "{\n  \"companyName\": \"Exotic Liquids\",\n  \"contactName\": \"Updated\"\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Delete Supplier", "request": { "method": "DELETE", "header": [ { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/suppliers/1", "host": ["{{baseUrl}}"], "path": ["api","suppliers","1"] } }, "response": [] }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "List Orders",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/orders?customerId=&employeeId=&from=&to=&page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api","orders"],
+              "query": [
+                {"key":"customerId","value":""},
+                {"key":"employeeId","value":""},
+                {"key":"from","value":""},
+                {"key":"to","value":""},
+                {"key":"page","value":"0"},
+                {"key":"size","value":"10"}
+              ]
+            }
+          },
+          "response": []
+        },
+        { "name": "Get Order by ID", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/orders/10248", "host": ["{{baseUrl}}"], "path": ["api","orders","10248"] } }, "response": [] },
+        { "name": "Create Order", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/orders", "host": ["{{baseUrl}}"], "path": ["api","orders"] }, "body": { "mode": "raw", "raw": "{\n  \"customerId\": \"ALFKI\",\n  \"employeeId\": 1,\n  \"orderDate\": \"1997-08-25\",\n  \"requiredDate\": \"1997-09-22\",\n  \"shippedDate\": \"1997-09-02\"\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Update Order", "request": { "method": "PUT", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/orders/10248", "host": ["{{baseUrl}}"], "path": ["api","orders","10248"] }, "body": { "mode": "raw", "raw": "{\n  \"customerId\": \"ALFKI\",\n  \"employeeId\": 1,\n  \"orderDate\": \"1997-08-26\",\n  \"requiredDate\": \"1997-09-23\",\n  \"shippedDate\": \"1997-09-03\"\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Order Summary", "request": { "method": "GET", "header": [ { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/orders/10248/summary", "host": ["{{baseUrl}}"], "path": ["api","orders","10248","summary"] } }, "response": [] },
+        { "name": "Orders Total by Filters", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/orders/summary/total?customerId=&from=&to=", "host": ["{{baseUrl}}"], "path": ["api","orders","summary","total"], "query": [ {"key":"customerId","value":""},{"key":"from","value":""},{"key":"to","value":""} ] } }, "response": [] }
+      ]
+    },
+    {
+      "name": "Order Details",
+      "item": [
+        { "name": "List Details for Order", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/orders/10248/details?page=0&size=10", "host": ["{{baseUrl}}"], "path": ["api","orders","10248","details"], "query": [{"key":"page","value":"0"},{"key":"size","value":"10"}] } }, "response": [] },
+        { "name": "Get Detail by Product ID", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/orders/10248/details/11", "host": ["{{baseUrl}}"], "path": ["api","orders","10248","details","11"] } }, "response": [] },
+        { "name": "Create Detail", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/orders/10248/details", "host": ["{{baseUrl}}"], "path": ["api","orders","10248","details"] }, "body": { "mode": "raw", "raw": "{\n  \"productId\": 11,\n  \"unitPrice\": 14.00,\n  \"quantity\": 12,\n  \"discount\": 0\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Update Detail", "request": { "method": "PUT", "header": [ { "key": "Content-Type", "value": "application/json", "type": "text" }, { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/orders/10248/details/11", "host": ["{{baseUrl}}"], "path": ["api","orders","10248","details","11"] }, "body": { "mode": "raw", "raw": "{\n  \"productId\": 11,\n  \"unitPrice\": 16.00,\n  \"quantity\": 10,\n  \"discount\": 0\n}", "options": { "raw": { "language": "json" } } } }, "response": [] },
+        { "name": "Delete Detail", "request": { "method": "DELETE", "header": [ { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" } ], "url": { "raw": "{{baseUrl}}/api/orders/10248/details/11", "host": ["{{baseUrl}}"], "path": ["api","orders","10248","details","11"] } }, "response": [] },
+        { "name": "Order Details Total", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/api/orders/10248/details/summary/total", "host": ["{{baseUrl}}"], "path": ["api","orders","10248","details","summary","total"] } }, "response": [] }
+      ]
     }
   ],
   "variable": [
-    { "key": "token", "value": "" }
+    { "name": "baseUrl", "value": "http://localhost:8080" },
+    { "name": "token", "value": "" }
   ]
 }

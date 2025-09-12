@@ -28,12 +28,16 @@ public class AuthController {
 
 	@PostMapping("/login")
 	public ResponseEntity<Map<String, String>> login(@RequestBody LoginRequest req) {
-		Authentication auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(req.username, req.password));
-		SecurityContextHolder.getContext().setAuthentication(auth);
-		var userDetails = userDetailsService.loadUserByUsername(req.username);
-		java.util.List<String> roles = userDetails.getAuthorities().stream().map(a -> a.getAuthority().replace("ROLE_","" )).toList();
-		String token = jwtService.generateToken(req.username, Map.of("roles", roles), 3600);
-		return ResponseEntity.ok(Map.of("access_token", token, "token_type", "Bearer"));
+		try {
+			Authentication auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(req.username, req.password));
+			SecurityContextHolder.getContext().setAuthentication(auth);
+			var userDetails = userDetailsService.loadUserByUsername(req.username);
+			java.util.List<String> roles = userDetails.getAuthorities().stream().map(a -> a.getAuthority().replace("ROLE_","" )).toList();
+			String token = jwtService.generateToken(req.username, Map.of("roles", roles), 3600);
+			return ResponseEntity.ok(Map.of("access_token", token, "token_type", "Bearer"));
+		} catch (Exception e) {
+			return ResponseEntity.status(401).build();
+		}
 	}
 
 	@PostMapping("/refresh")

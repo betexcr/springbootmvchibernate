@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.context.TestPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -24,9 +25,7 @@ public abstract class BaseIntegrationTest {
 
     @Container
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15")
-            .withDatabaseName("northwind_test")
-            .withUsername("test")
-            .withPassword("test");
+            .withDatabaseName("northwind_test");
 
     @LocalServerPort
     protected int port;
@@ -69,9 +68,9 @@ public abstract class BaseIntegrationTest {
         assertEquals(200, response.getStatusCode().value());
         assertNotNull(response.getBody());
         
-        // Extract token from response (assuming it returns {"token":"..."})
+        // Extract token from response (returns {"access_token":"...", "token_type":"Bearer"})
         String body = response.getBody();
-        int tokenStart = body.indexOf("\"token\":\"") + 9;
+        int tokenStart = body.indexOf("\"access_token\":\"") + 16;
         int tokenEnd = body.indexOf("\"", tokenStart);
         return body.substring(tokenStart, tokenEnd);
     }
